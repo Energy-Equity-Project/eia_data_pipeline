@@ -10,7 +10,7 @@ source("Form_861/process_861_utility_sales.R")
 
 # Directory structure===========================================================
 datadir <- "../../Data/EIA/861/Form 861 - unzipped"
-outdir <- "outputs"
+outdir <- "../../Cleaned Data/EIA/Form_861"
 
 # Data cleaning process=========================================================
 
