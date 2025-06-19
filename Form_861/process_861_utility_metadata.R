@@ -39,7 +39,7 @@ process_utility_metadata <- function(form_861_fps) {
     
     # Combining state and territory utility data
     # (have different names for the sheets across different years)
-    for (sheet_idx in length(sales_sheets)) {
+    for (sheet_idx in 1:length(sales_sheets)) {
       # Collecting all metadata across all years into 1 dataframe
       utility_metadata <- utility_metadata %>%
         bind_rows(
