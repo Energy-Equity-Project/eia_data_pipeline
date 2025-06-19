@@ -1,1 +1,10 @@
+
+# R setup files
+.Rproj.user
+*.Rproj
+
+# MacOS directory file
 .DS_Store
+
+# Outputs folder
+*/outputs/
