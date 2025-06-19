@@ -6,6 +6,7 @@ library(readxl)
 
 # Source functions and scripts==================================================
 source("Form_861/process_861_utility_metadata.R")
+source("Form_861/process_861_utility_sales.R")
 
 # Directory structure===========================================================
 datadir <- "../../Data/EIA/861/Form 861 - unzipped"
@@ -24,7 +25,7 @@ sales_files <- list.files(
 # Get utility metadata across all files and years
 utility_metadata <- process_utility_metadata(sales_files)
 
-# Dataframe to collect all cleaned data
-form_861 <- data.frame()
+# Get utility sales and rates across all files and years
+utility_sales <- process_utility_sales(sales_files)
 
 
