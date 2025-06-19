@@ -30,7 +30,7 @@ process_utility_metadata <- function(form_861_fps) {
   
   for (curr_fp in form_861_fps) {
     
-    print(paste0("Processing utility metadata for...", curr_fp))
+    print(paste0("Processing utility metadata for: ", curr_fp))
     
     sales_sheet_names <- excel_sheets(curr_fp)
     # Not processing utility decoupled data
