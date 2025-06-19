@@ -96,5 +96,9 @@ process_utility_sales <- function(form_861_fps) {
     }
   }
   
+  utility_sales <- utility_sales %>%
+    # arrange data by data year, state and utility name
+    arrange(desc(data_year), state, utility_name)
+  
   return(utility_sales)
 }

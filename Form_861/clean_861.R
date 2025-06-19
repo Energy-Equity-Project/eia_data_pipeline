@@ -10,7 +10,7 @@ source("Form_861/process_861_utility_sales.R")
 
 # Directory structure===========================================================
 datadir <- "../../Data/EIA/861/Form 861 - unzipped"
-outdir <- "Form_861/outputs"
+outdir <- "outputs"
 
 # Data cleaning process=========================================================
 
@@ -25,7 +25,17 @@ sales_files <- list.files(
 # Get utility metadata across all files and years
 utility_metadata <- process_utility_metadata(sales_files)
 
+write.csv(
+  utility_metadata,
+  file.path(outdir, "form_861_utility_metadata.csv"),
+  row.names = FALSE
+)
+
 # Get utility sales and rates across all files and years
-utility_sales <- process_utility_sales(sales_files)
+utility_sales <- process_utility_sales(sales_files) # Note: adjustments are still included in sales data
 
-
+write.csv(
+  utility_sales,
+  file.path(outdir, "form_861_utility_sales.csv"),
+  row.names = FALSE
+)

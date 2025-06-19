@@ -50,5 +50,15 @@ process_utility_metadata <- function(form_861_fps) {
     }
   }
   
+  
+  utility_metadata <- utility_metadata %>%
+    # Transforming numeric type columns appropriately
+    mutate(
+      data_year = as.numeric(data_year),
+      utility_number = as.numeric(utility_number)
+    ) %>%
+    # arrange data by data year, state and utility name
+    arrange(desc(data_year), state, utility_name)
+  
   return(utility_metadata)
 }
