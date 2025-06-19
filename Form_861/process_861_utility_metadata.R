@@ -35,7 +35,7 @@ process_utility_metadata <- function(form_861_fps) {
     sales_sheet_names <- excel_sheets(curr_fp)
     # Not processing utility decoupled data
     sales_sheet_names <- sales_sheet_names[sales_sheet_names != "Decoupled"]
-    sales_sheets <- lapply(sales_sheet_names, read_excel, path = curr_fp)
+    sales_sheets <- suppressMessages(lapply(sales_sheet_names, read_excel, path = curr_fp))
     
     # Combining state and territory utility data
     # (have different names for the sheets across different years)
